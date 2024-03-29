@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './learn_flutter_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,7 +10,10 @@ class HomePage extends StatelessWidget {
         child: ElevatedButton(
       onPressed: () {
         // Add your onPressed code here!
-        debugPrint('ElevatedButton pressed');
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (BuildContext context) {
+          return const LearnFlutterPage();
+        }));
       },
       child: const Text("Learn Flutter"),
     ));
