@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
 
-void main() => runApp(const XylophoneApp());
+void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-  const XylophoneApp({Key? key}) : super(key: key);
-
   void playSound(int soundNumber) {
-    final player = AudioCache();
-    player.play('note$soundNumber.wav');
+    // final player = AudioCache();
+    // player.play('note$soundNumber.wav');
   }
 
   Expanded buildKey({required Color color, required int soundNumber}) {
     return Expanded(
-      child: FlatButton(
-        color: color,
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(color),
+        ),
+        child: Text('Click me'),
         onPressed: () {
-          playSound(soundNumber);
-        }, child: const Text("test"),
+          // playSound(soundNumber);
+        },
       ),
     );
   }
